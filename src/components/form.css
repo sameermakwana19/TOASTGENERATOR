@@ -1,0 +1,51 @@
+.form-container {
+  /* position: absolute; */
+  /* bottom: 15%; */
+  width: 90%;
+  max-width: 1140px;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  font-family: cursive;
+  border: 5px dotted rgb(172, 170, 170);
+}
+
+form {
+  padding: 2rem 4rem;
+  width: 100%;
+  height: 100%;
+  background-color: antiquewhite;
+  color: black;
+}
+
+.textarea-container,
+.variants-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label {
+  margin: 0 1rem;
+}
+textarea {
+  color: black;
+  flex-grow: 1;
+  max-width: 500px;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  background-color: transparent;
+  margin: 0.5rem 1rem;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+}
+
+.radiobtns-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.radiobtns-container label {
+  font-size: 2rem;
+}
