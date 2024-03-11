@@ -1,6 +1,7 @@
 .form-container {
-  /* position: absolute; */
-  /* bottom: 15%; */
+  position: absolute;
+  bottom: 15%;
+  left: 14%;
   width: 90%;
   max-width: 1140px;
   font-size: 2rem;
@@ -31,7 +32,7 @@ textarea {
   flex-grow: 1;
   max-width: 500px;
   padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   background-color: transparent;
   margin: 0.5rem 1rem;
   border: 1px solid black;

@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import "./form.css";
 
 const variants = ["notice", "warning", "success", "error"];
 
-const Form = ({ toast, updateToast, visibleToast }) => {
+const Form = ({ setVisibleToast, setTimer, toastTiming }) => {
   // console.log(toast);
+
+  const [toast, setToast] = useState({
+    msg: "Demo Toast",
+    variant: "notice",
+  });
   const { msg, variant } = toast;
 
-  let themeColor = {
-    notice: "blue",
-    warning: "orange",
-    success: "green",
-    error: "error",
-  };
+  const updateToast = useCallback((e) => {
+    const { name, value } = e.target;
+    setToast((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }, []);
 
   function generateToast(e) {
     e.preventDefault();
-    console.log({ msg }, { variant });
+    let id = crypto.randomUUID();
+
+    // console.log({ msg }, { variant });
+    setVisibleToast((prev) => [...prev, { ...toast, id }]);
+    setTimer((prev) => prev + toastTiming);
   }
 
   return (
@@ -35,6 +45,7 @@ const Form = ({ toast, updateToast, visibleToast }) => {
         </div>
 
         {/* radio buttons for variants */}
+
         <div className="variants-container">
           <p>Variants : </p>
           <div className="radiobtns-container">
@@ -65,7 +76,7 @@ const Form = ({ toast, updateToast, visibleToast }) => {
   );
 };
 
-export default Form;
+export default React.memo(Form);
 
 //
 {

@@ -67,3 +67,34 @@ h2 {
   letter-spacing: 3px;
   margin: 1.5rem 0;
 }
+
+.toast-container {
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+  /* background-color: rgb(3, 168, 3); */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+
+.toast {
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  margin: 0.5rem 0;
+}
+
+.cross-icon {
+  font-size: 2rem;
+  margin: 0 1rem;
+  font-weight: 700;
+}

@@ -5,10 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgb(59, 25, 90); */
-
   background: #664aca;
-  /*  #775ed0 */
   background: radial-gradient(at center top, #3c2591, #2d085d);
   z-index: -10;
   display: flex;
