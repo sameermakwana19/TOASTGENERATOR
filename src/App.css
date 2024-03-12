@@ -61,17 +61,19 @@ h2 {
   z-index: 10;
   left: 25%;
   top: 30%;
+  background-color: transparent;
   /* transform: translate(-50%, -50%); */
   font-size: 5rem;
   font-weight: 600;
   letter-spacing: 3px;
   margin: 1.5rem 0;
+  color: gold;
 }
 
 .toast-container {
   position: absolute;
   bottom: 10%;
-  right: 2%;
+  right: 4%;
   /* background-color: rgb(3, 168, 3); */
   padding: 1rem;
   display: flex;

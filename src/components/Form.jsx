@@ -20,21 +20,27 @@ const Form = ({ setVisibleToast, setTimer, toastTiming }) => {
     }));
   }, []);
 
-  function generateToast(e) {
+  const generateToast = (e) => {
     e.preventDefault();
+    if (msg.trim() === "") {
+      console.log("returning");
+      setToast((prev) => ({ ...prev, msg: "" }));
+      return;
+    }
+
     let id = crypto.randomUUID();
 
     // console.log({ msg }, { variant });
     setVisibleToast((prev) => [...prev, { ...toast, id }]);
     setTimer((prev) => prev + toastTiming);
-  }
+  };
 
   return (
     <div className="form-container">
       <form onSubmit={generateToast}>
         {/* Text input */}
         <div className="textarea-container">
-          <label htmlFor="msg">Message</label>
+          <label htmlFor="msg">Message : </label>
           <textarea
             type="text"
             id="msg"

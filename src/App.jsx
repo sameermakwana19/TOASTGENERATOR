@@ -6,14 +6,28 @@ import Form from "./components/Form";
 const toastTiming = 3;
 let backgroundColors = {
   notice: "rgb(5, 184, 197)",
-  warning: "rgb(247, 142, 45)",
-  success: "rgb(3, 168, 3)",
-  error: "red",
+  warning: "#f97316",
+  success: "#65a30d",
+  error: "#f43f5e",
 };
 
 function App() {
   const [visibleToast, setVisibleToast] = useState([]);
   const [timer, setTimer] = useState(0);
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.code === "Escape") {
+        setVisibleToast([]);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   useEffect(() => {
     if (timer <= 0) {
@@ -36,13 +50,19 @@ function App() {
     if (e.target.tagName === "I") {
       const currentId = e.target.parentElement.dataset.id;
 
-      setVisibleToast((prev) => {
-        const newArr = prev.filter((item) => {
-          console.log(item);
-          return !(currentId === item.id);
-        });
-        return newArr;
-      });
+      // setVisibleToast((prev) => {
+      //   const newArr = prev.filter((item) => {
+      //     // console.log(item);
+      //     return currentId !== item.id;
+      //   });
+      //   return newArr;
+      // });
+      setVisibleToast((prev) =>
+        prev.filter((item) => {
+          // console.log(item);
+          return currentId !== item.id;
+        })
+      );
 
       setTimer((prev) => prev - toastTiming);
     }
